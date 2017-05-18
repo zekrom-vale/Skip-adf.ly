@@ -29,7 +29,7 @@
       ],
       "js": ["skip.js"]
     }
-  ]
+  ],
   "permissions": [
     "http://adf.ly*",
     "http://atominik.com*",

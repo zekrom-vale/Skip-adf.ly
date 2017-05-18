@@ -25,11 +25,11 @@
         "http://ay.gy*",
         "http://getrom.net*",
         "http://riffhold.com*",
-        "http://babblecase.com*",
-      ],
+        "http://babblecase.com*"
+      ]
       "js": ["skip.js"]
     }
-  ],
+  ]
   "permissions": [
     "adf.ly",
   ]

@@ -26,7 +26,7 @@
         "http://getrom.net*",
         "http://riffhold.com*",
         "http://babblecase.com*"
-      ]
+      ],
       "js": ["skip.js"]
     }
   ]

@@ -1,49 +1,14 @@
 {
   "manifest_version": 2,
-
   "name": "Skip Adf.ly",
   "description": "This extension skips Adf.ly ads",
   "version": "0.1",
-
   "browser_action": {
-    "default_icon": "http://static.adf.ly/static/image/apple-touch-icon.png",
-  "_comment": "How to run js?"
+    "default_icon": "icon.png"
   },
-    "content_scripts": [
-    {
-      "matches": [
-        "http://adf.ly*",
-        "http://atominik.com*",
-        "http://microify.com*",
-        "http://bluenik.com*",
-        "http://tinyium.com*",
-        "http://babblecase.com*",
-        "http://riffhold.com*",
-        "http://pintient.com*",
-        "http://j.gs*",
-        "http://q.gs*",
-        "http://ay.gy*",
-        "http://getrom.net*",
-        "http://riffhold.com*",
-        "http://babblecase.com*"
-      ],
+  "permissions": ["http://adf.ly/*","http://atominik.com/*","http://microify.com/*","http://bluenik.com/*","http://tinyium.com/*","http://babblecase.com/*","http://riffhold.com/*","http://pintient.com/*","http://j.gs/*","http://q.gs/*","http://ay.gy/*","http://getrom.net/*","http://riffhold.com/*","http://babblecase.com/*"],
+  "content_scripts": [{
+    "matches": ["http://adf.ly/*","http://atominik.com/*","http://microify.com/*","http://bluenik.com/*","http://tinyium.com/*","http://babblecase.com/*","http://riffhold.com/*","http://pintient.com/*","http://j.gs/*","http://q.gs/*","http://ay.gy/*","http://getrom.net/*","http://riffhold.com/*","http://babblecase.com/*"],
       "js": ["skip.js"]
-    }
-  ],
-  "permissions": [
-    "http://adf.ly*",
-    "http://atominik.com*",
-    "http://microify.com*",
-    "http://bluenik.com*",
-    "http://tinyium.com*",
-    "http://babblecase.com*",
-    "http://riffhold.com*",
-    "http://pintient.com*",
-    "http://j.gs*",
-    "http://q.gs*",
-    "http://ay.gy*",
-    "http://getrom.net*",
-    "http://riffhold.com*",
-    "http://babblecase.com*"
-  ]
+    }]
 }

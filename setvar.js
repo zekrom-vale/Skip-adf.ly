@@ -1,7 +1,6 @@
-//How to force a varable to stay, regardless of other varable settings.  Like CSS !important
-var count, countdown;
-
-if (!countdown=0 & !count= 0){
-	countdown= 0;
-	count= 0;
+function skip{
+	var element = document.querySelector('meta[property="og:url"]');
+	var content = element && element.getAttribute("content");
+	window.location.replace(content);
 }
+//<meta property="og:url" content="http://console.developers.google.com/apis">

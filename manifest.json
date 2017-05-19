@@ -21,6 +21,9 @@
     "*://riffhold.com/*",
     "*://babblecase.com/*"
   ],
+  "optional_permissions": [
+	"*://*/banner/*"
+  ],
   "content_scripts": [{
     "matches": [
       "*://adf.ly/*",

@@ -24,5 +24,11 @@ function kill(){
 	end;
 	stop;
 	kill;
-	//How to stop the alert on unload
+	//Warning! this may remove other scripts
+	var srp = document.getElementsByTagName("script"),
+	i;
+	for (i= 0; i< srp.length; i++) {
+		document.getElementsByTagName("script").innerHTML= "var test= null; console.log('This is working to remove scripts')";
+	}
+	console.log('kill.log')
 }

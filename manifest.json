@@ -2,42 +2,41 @@
   "manifest_version": 2,
   "name": "Skip Adf.ly",
   "description": "This extension skips Adf.ly ads",
-  "version": "0.1",
+  "version": "0.2",
   "browser_action": {
     "default_icon": "icon.png"
   },
-  
   "permissions": [
-    "http://adf.ly/*",
-    "http://atominik.com/*",
-    "http://microify.com/*",
-    "http://bluenik.com/*",
-    "http://tinyium.com/*",
-    "http://babblecase.com/*",
-    "http://riffhold.com/*",
-    "http://pintient.com/*",
-    "http://?.gs/*",
-    "http://ay.gy/*",
-    "http://getrom.net/*",
-    "http://riffhold.com/*",
-    "http://babblecase.com/*"
+    "*://adf.ly/*",
+    "*://atominik.com/*",
+    "*://microify.com/*",
+    "*://bluenik.com/*",
+    "*://tinyium.com/*",
+    "*://babblecase.com/*",
+    "*://riffhold.com/*",
+    "*://pintient.com/*",
+    "*://?.gs/*",
+    "*://ay.gy/*",
+    "*://getrom.net/*",
+    "*://riffhold.com/*",
+    "*://babblecase.com/*"
   ],
   "content_scripts": [{
     "matches": [
-      "http://adf.ly/*",
-      "http://atominik.com/*",
-      "http://microify.com/*",
-      "http://bluenik.com/*",
-      "http://tinyium.com/*",
-      "http://babblecase.com/*",
-      "http://riffhold.com/*",
-      "http://pintient.com/*",
-      "http://?.gs/*",
-      "http://ay.gy/*",
-      "http://getrom.net/*",
-      "http://riffhold.com/*",
-      "http://babblecase.com/*"
-  ],
-      "js": ["skip.js"]
-    }]
+      "*://adf.ly/*",
+      "*://atominik.com/*",
+      "*://microify.com/*",
+      "*://bluenik.com/*",
+      "*://tinyium.com/*",
+      "*://babblecase.com/*",
+      "*://riffhold.com/*",
+      "*://pintient.com/*",
+      "*://?.gs/*",
+      "*://ay.gy/*",
+      "*://getrom.net/*",
+      "*://riffhold.com/*",
+      "*://babblecase.com/*"
+    ],
+    "js": ["skip.js"]
+  }]
 }

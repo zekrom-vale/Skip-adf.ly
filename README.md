@@ -1,6 +1,6 @@
 # Skip-adf.ly
 This works on
-
+<pre>
 <ui>http://adf.ly/*</ui><br/>
 <ui>http://atominik.com/*</ui><br/>
 <ui>http://microify.com/*</ui><br/>
@@ -15,5 +15,5 @@ This works on
 <ui>http://getrom.net/*</ui><br/>
 <ui>http://riffhold.com/*</ui><br/>
 <ui>http://babblecase.com/*</ui><br/>
-
+<pre>
 I have a plan to change "http://q.gs/*" to "http://?.gs/*"

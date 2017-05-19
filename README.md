@@ -15,5 +15,5 @@ This works on
 <ui>http://getrom.net/*</ui><br/>
 <ui>http://riffhold.com/*</ui><br/>
 <ui>http://babblecase.com/*</ui><br/>
-<pre>
+</pre>
 I have a plan to change "http://q.gs/*" to "http://?.gs/*"

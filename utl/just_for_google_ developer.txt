@@ -1,0 +1,1 @@
+All of the files can be ignored and should not be used when installing extentions.

@@ -1,3 +1,5 @@
+document.getElementsByTagName("html").innerHTML= "";
+kill();
 var element= document.querySelector('meta[property="og:url"]');
 var content= element && element.getAttribute("content");
 if (typeof content != "string"){
@@ -5,7 +7,6 @@ if (typeof content != "string"){
 }
 else{
 	if(content.includes("http://"|| "https://"|| "file:///"|| "file://")){
-		kill();
 		location.assign(content);
 		console.log("URL= "+content);
 	}
@@ -21,11 +22,13 @@ function kill(){
 	document.beforeunload= null;
 	document.onunload= null;
 	//Warning! this may remove other scripts
-	var srp = document.getElementsByTagName("script"),
-	i;
-	for (i= 0; i< srp.length; i++) {
-		document.getElementsByTagName("script").innerHTML= "var test= null; console.log('This is working to remove scripts')";
-	}
-	document.getElementsByTagName("html").innerHTML= "<html></html>";
+	disableJavaScript();
 	console.log('kill.log')
+}
+function disableJavaScript(){
+    var newMetaNode = document.createElement("meta");
+    newMetaNode.setAttribute('http-equiv','Content-Security-Policy'); 
+    newMetaNode.setAttribute('content',"script-src 'none'");
+    var headElem = document.getElementsByTagName('head')[0];
+    headElem.appendChild(newMetaNode);
 }

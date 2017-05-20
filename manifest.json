@@ -25,6 +25,9 @@
   "optional_permissions": [
 	"*://*/banner/*"
   ],
+  "optional_permissions": [
+	"*://*/banner/*"
+  ],
   "content_scripts": [{
     "matches": [
       "*://adf.ly/*",

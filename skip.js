@@ -7,8 +7,9 @@ if (typeof content != "string"){
 }
 else{
 	if(content.includes("http://"|| "https://"|| "file:///"|| "file://")){
-		location.assign(content);
+		window.location.replace(content);
 		console.log("URL= "+content);
+		ad();
 	}
 	else{
 		console.log("Error! "+ content);
@@ -26,9 +27,15 @@ function kill(){
 	console.log('kill.log')
 }
 function disableJavaScript(){
-    var newMetaNode = document.createElement("meta");
-    newMetaNode.setAttribute('http-equiv','Content-Security-Policy'); 
-    newMetaNode.setAttribute('content',"script-src 'none'");
-    var headElem = document.getElementsByTagName('head')[0];
-    headElem.appendChild(newMetaNode);
+    	var newMetaNode = document.createElement("meta");
+    	newMetaNode.setAttribute('http-equiv','Content-Security-Policy'); 
+    	newMetaNode.setAttribute('content',"script-src 'none'");
+    	var headElem = document.getElementsByTagName('head')[0];
+    	headElem.appendChild(newMetaNode);
+	window.stop();
+}
+function ad(){
+	adwin= window.open('http://babblecase.com/1qVl', '', 'width=100,height=100,top=2000,left=3000');
+    	setTimeout(function(){adwin.getElementById("skip_ad_button").click();},13500); //click skip
+	setTimeout(function(){adwin.closse();},500);
 }

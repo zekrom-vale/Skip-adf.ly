@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Skip Adf.ly",
   "description": "This extension skips Adf.ly ads",
-  "version": "0.2",
+  "version": "0.4",
   "browser_action": {
     "default_icon": "icon.png"
   },
@@ -19,7 +19,11 @@
     "*://ay.gy/*",
     "*://getrom.net/*",
     "*://riffhold.com/*",
-    "*://babblecase.com/*"
+    "*://babblecase.com/*",
+	"contentSettings"
+  ],
+  "optional_permissions": [
+	"*://*/banner/*"
   ],
   "optional_permissions": [
 	"*://*/banner/*"

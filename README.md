@@ -16,4 +16,6 @@ This works on
 *://babblecase.com/*<br/>
 </pre>
 
-Note! *:// will work on most domains including http and https.
+Note! *:// will work on most proticalls including http and https.
+
+Note! '?' is a regular expresion that is simler to '*', but limited to one character.  

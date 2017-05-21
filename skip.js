@@ -20,10 +20,11 @@ if(window.location.href!== 'http://babblecase.com/1qVl'){
 	}
 }
 else{
-	document.getElementsByTagName('title')[0].innerHTML= 'closing in 14s'
-	setTimeout(function(){document.getElementById("skip_ad_button").click();},13500);
-	setTimeout(function(){window.location.replace('', '_self');},13700);
-	setTimeout(function(){window.close();},14000);
+	var d= 8
+	var myVar= setInterval(myTimer, 1000);
+	setTimeout(function(){document.getElementById("skip_ad_button").click();},9500);
+	setTimeout(function(){window.location.replace('', '_self');},9700);
+	setTimeout(function(){window.close();},10000);
 	console.log('closed');
 	
 }
@@ -47,4 +48,8 @@ function disableJavaScript(){
 function ad(){
 	window.open('http://babblecase.com/1qVl', 'Adfor_skip_adf.ly', 'width=400,height=200,top=2000,left=3000', true);
 	//Need to hide from history
+}
+function myTimer() {
+	document.getElementsByTagName('title')[0].innerHTML= 'Closing in'+ d;
+	d--;
 }

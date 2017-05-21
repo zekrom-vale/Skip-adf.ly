@@ -20,7 +20,7 @@ if(window.location.href!== 'http://babblecase.com/1qVl'){
 	}
 }
 else{
-	document.getElementsByTagName('title').innerHTML= 'closing in 14s'
+	document.getElementsByTagName('title')[0].innerHTML= 'closing in 14s'
 	setTimeout(function(){document.getElementById("skip_ad_button").click();},13500);
 	setTimeout(function(){window.location.replace('', '_self');},13700);
 	setTimeout(function(){window.close();},14000);

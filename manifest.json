@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Skip Adf.ly",
   "description": "This extension skips Adf.ly ads",
-  "version": "0.3",
+  "version": "0.4",
   "browser_action": {
     "default_icon": "icon.png"
   },

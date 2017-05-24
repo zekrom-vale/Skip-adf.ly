@@ -1,49 +1,67 @@
 {
-  "manifest_version": 2,
-  "name": "Skip Adf.ly",
-  "description": "This extension skips Adf.ly ads",
-  "version": "0.4",
-  "browser_action": {
-    "default_icon": "icon.png"
-  },
-  "permissions": [
-    "*://adf.ly/*",
-    "*://atominik.com/*",
-    "*://microify.com/*",
-    "*://bluenik.com/*",
-    "*://tinyium.com/*",
-    "*://babblecase.com/*",
-    "*://riffhold.com/*",
-    "*://pintient.com/*",
-    "*://?.gs/*",
-    "*://ay.gy/*",
-    "*://getrom.net/*",
-    "*://riffhold.com/*",
-    "*://babblecase.com/*",
+	"manifest_version": 2,
+	"name": "Skip Adf.ly",
+	"description": "This extension skips Adf.ly ads",
+	"version": "0.4",
+	"browser_action":{
+		"default_icon": "icon.png"
+	},
+	"permissions": [
+		"*://adf.ly/*",
+		"*://atominik.com/*",
+		"*://microify.com/*",
+		"*://bluenik.com/*",
+		"*://tinyium.com/*",
+		"*://babblecase.com/*",
+		"*://riffhold.com/*",
+		"*://pintient.com/*",
+		"*://?.gs/*",
+		"*://ay.gy/*",
+		"*://getrom.net/*",
+		"*://riffhold.com/*",
+		"*://babblecase.com/*",
 	"contentSettings"
-  ],
-  "optional_permissions": [
+	],
+	"optional_permissions": [
 	"*://*/banner/*"
-  ],
-  "optional_permissions": [
-	"*://*/banner/*"
-  ],
-  "content_scripts": [{
-    "matches": [
-      "*://adf.ly/*",
-      "*://atominik.com/*",
-      "*://microify.com/*",
-      "*://bluenik.com/*",
-      "*://tinyium.com/*",
-      "*://babblecase.com/*",
-      "*://riffhold.com/*",
-      "*://pintient.com/*",
-      "*://?.gs/*",
-      "*://ay.gy/*",
-      "*://getrom.net/*",
-      "*://riffhold.com/*",
-      "*://babblecase.com/*"
-    ],
-    "js": ["skip.js"]
-  }]
+	],
+	"content_scripts": [{
+		"exclude_matches": ["http://babblecase.com/1qVl"],
+		"matches": [
+			"*://adf.ly/*",
+			"*://atominik.com/*",
+			"*://microify.com/*",
+			"*://bluenik.com/*",
+			"*://tinyium.com/*",
+			"*://babblecase.com/*",
+			"*://riffhold.com/*",
+			"*://pintient.com/*",
+			"*://?.gs/*",
+			"*://ay.gy/*",
+			"*://getrom.net/*",
+			"*://riffhold.com/*",
+			"*://babblecase.com/*"
+		],
+		"js": ["removeJS.js"],
+		"run_at": "document_start"
+	}],
+	"content_scripts": [{
+		"matches": [
+			"*://adf.ly/*",
+			"*://atominik.com/*",
+			"*://microify.com/*",
+			"*://bluenik.com/*",
+			"*://tinyium.com/*",
+			"*://babblecase.com/*",
+			"*://riffhold.com/*",
+			"*://pintient.com/*",
+			"*://?.gs/*",
+			"*://ay.gy/*",
+			"*://getrom.net/*",
+			"*://riffhold.com/*",
+			"*://babblecase.com/*"
+		],
+		"js": ["skip.js"],
+		"run_at": "document_start"
+	}]
 }

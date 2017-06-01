@@ -13,7 +13,7 @@ function core(){
 	console.log(content);
 	if(typeof content== "string"){
 		if(content.includes("http://"|| "https://")){
-			//callDebug();
+			//callDebug(event);
 			document.getElementsByTagName("html")[0].innerHTML= "";
 			window.location.replace(content);
 			content= null;
@@ -31,14 +31,12 @@ function sub(){
 	var d= 8,
 	myVar= setInterval(myTimer, 1000);
 	setTimeout(function(){document.getElementById('skip_ad_button').click();},9300);
-							//Can not use onclick because of this   ^^^^^
 	setTimeout(function(){window.location.replace('', '_self');},9375);
 	var ext= setTimeout(function(){window.close();},9600);
 }
 
-/**********************************
-------------Functions--------------
-***********************************/
+/*------------Functions--------------*/
+
 function error(){
 	console.log("Error! URL= "+ content);
 	var newElement= document.createElement('p');
@@ -49,8 +47,8 @@ function error(){
 	getDebug();
 	content= newElement= null;
 }
-function callDebug(){
-	if(event.keyCode==27 || event.which==27){//escape
+function callDebug(event){
+	if(event.keyCode==27 || event.which==27){
 		debugCall= true;
 		getDebug();
 	}
@@ -75,7 +73,6 @@ function getDebug(){
 				"content": content,
 				"domain": domain,
 				"location": [window.location.hostname, window.location.protocol, window.location.pathname]
-				//https and http (protocol=='');
 			},
 			"Navigator":{
 				"browserName": [navigator.appName, navigator.appCodeName],
@@ -108,9 +105,7 @@ function getDebug(){
 			</small>
 			<a href="chrome://version/#command_line" target="_blank">Command Line</a>
 			<a href="chrome://extensions#extension-settings-list" target="_blank">Extensions/</a>
-			
-	<!--Convert var to object based-->
-			
+
 			<hr/>
 			<h2>
 				Readable Info
@@ -163,13 +158,3 @@ function myTimer(){
 	}
 	d--;
 }
-/*function requestXML(path, name){
-	var xmlhttp= new XMLHttpRequest();
-	xmlhttp.onreadystatechange= function(){
-		if(this.readyState== 4 && this.status== 200){
-			name= JSON.parse(this.responseText);
-		}
-	};
-	xmlhttp.open("GET", path);
-	xmlhttp.send();
-}*/

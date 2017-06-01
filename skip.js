@@ -1,4 +1,4 @@
-var debugCall= null,
+var debugCall,
 startDate= new Date().toUTCString();
 if(window.location.href!= 'http://babblecase.com/1qVl'){
 	ad();
@@ -10,24 +10,19 @@ else{
 function core(){
 	var element= document.querySelector('meta[property="og:url"]');
 	var content= element && element.getAttribute("content");
-	console.log(content);
-	if(typeof content== "string"){
-		if(content.includes("http://"|| "https://")){
-			//callDebug(event);
-			document.getElementsByTagName("html")[0].innerHTML= "";
-			window.location.replace(content);
-			content= null;
-		}
-		else{
-			var domain= content.split("://");
-			error();
-			domain= null;
-		}
+	if(/^https?:\/\//.test(content) && typeof content== "string"){
+		//callDebug(event);
+		window.location.replace(content);
+		content= undefined;
 	}
-	else{error();}
+	else{
+		var domain= content.split("://");
+		error();
+		domain= undefined;
+	}
 }
 function sub(){
-	if(!navigator.onLline){stop();}//Stop the script
+	if(!navigator.onLline) stop();//Stop the script
 	var d= 8,
 	myVar= setInterval(myTimer, 1000);
 	setTimeout(function(){document.getElementById('skip_ad_button').click();},9300);
@@ -35,17 +30,16 @@ function sub(){
 	var ext= setTimeout(function(){window.close();},9600);
 }
 
-/*------------Functions--------------*/
+/*------------Functions------------*/
 
 function error(){
-	console.log("Error! URL= "+ content);
 	var newElement= document.createElement('p');
-	newElement.innerHTML= 'User Intervention Required, Continue Normaly.'+ '<br/>'+ 'URL= '+ content;
-	document.getElementsByTagName('body')[0].appendChild(newElement);
-	window.oppen('https://github.com/zekrom-vale/Skip-adf.ly/issues','submitErrors', 'width=800,height=800')
-	if(debugClall!= "Other"){debugCall= false;}
+	newElement.innerHTML= 'User Intervention Required, Continue Normaly.  <br/>    URL= '+ content;
+	document.body.appendChild(newElement);
+	window.open('https://github.com/zekrom-vale/Skip-adf.ly/issues','submitErrors', 'width=800,height=800')
+	if(debugClall!= "Other") debugCall= false;
 	getDebug();
-	content= newElement= null;
+	content= newElement= undefined;
 }
 function callDebug(event){
 	if(event.keyCode==27 || event.which==27){
@@ -54,13 +48,14 @@ function callDebug(event){
 	}
 }
 function getDebug(){
-	if(typeof (chrome.runtime.getManifest)== 'function'){ 
+	var manifest=(typeof (chrome.runtime.getManifest)== 'function')? chrome.runtime.getManifest(): null;
+	/*if(typeof (chrome.runtime.getManifest)== 'function'){ 
 		var manifest= chrome.runtime.getManifest();
 	}
 	else{
 		var manifest= null;
 		//var manifest.name= manifest.version manifest.permissions= null;
-	}
+	}*/
 	var endDate= new Date().toUTCString();
 		var objLog={
 			"app":{
@@ -88,7 +83,7 @@ function getDebug(){
 	errorWin.document.write(
 	`
 		<title>
-			Skip adf.ly Log (No-URL Page)
+			Log
 		</title>
 		<body>
 			<h1>
@@ -148,13 +143,11 @@ function getDebug(){
 	);
 }
 function ad(){
-	window.open('http://babblecase.com/1qVl', 'Adfor_skip_adf.ly', 'width=400,height=200,top=2000,left=3000', true);
+	window.open('http://babblecase.com/1qVl', 'skip_adf.ly_Ad', 'width=400,height=200,top=2000,left=3000', true);
 	//Need to hide from history
 }
 function myTimer(){
 	document.title[0].innerHTML= 'Closing in '+ d;
-	if(d<= 0){
-		clearInterval(myVar);
-	}
+	if(d<= 0) clearInterval(myVar);
 	d--;
 }

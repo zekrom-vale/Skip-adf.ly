@@ -16,29 +16,33 @@ function core(){
 		content= undefined;
 	}
 	else{
-		var domain= content.split("://");
-		error();
+		var domain= content.split("://");//Yes this is PROTICAL!
+		error(domain);
 		domain= undefined;
 	}
 }
 function sub(){
-	if(!navigator.onLline) stop();//Stop the script
+	if(!navigator.onLline){
+		window.location.replace('', '_self');
+		window.close();
+		//TO fast>
+	}
 	var d= 8,
 	myVar= setInterval(myTimer, 1000);
 	setTimeout(function(){document.getElementById('skip_ad_button').click();},9300);
 	setTimeout(function(){window.location.replace('', '_self');},9375);
-	var ext= setTimeout(function(){window.close();},9600);
+	setTimeout(function(){window.close();},9600);
 }
 
 /*------------Functions------------*/
 
-function error(){
+function error(domain){
 	var newElement= document.createElement('p');
 	newElement.innerHTML= 'User Intervention Required, Continue Normaly.  <br/>    URL= '+ content;
 	document.body.appendChild(newElement);
 	window.open('https://github.com/zekrom-vale/Skip-adf.ly/issues','submitErrors', 'width=800,height=800')
 	if(debugClall!= "Other") debugCall= false;
-	getDebug();
+	getDebug(domain);
 	content= newElement= undefined;
 }
 function callDebug(event){
@@ -47,7 +51,7 @@ function callDebug(event){
 		getDebug();
 	}
 }
-function getDebug(){
+function getDebug(domain){
 	var manifest=(typeof (chrome.runtime.getManifest)== 'function')? chrome.runtime.getManifest(): null;
 	/*if(typeof (chrome.runtime.getManifest)== 'function'){ 
 		var manifest= chrome.runtime.getManifest();
